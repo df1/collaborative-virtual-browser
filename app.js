@@ -17,7 +17,7 @@ io = io.listen(server, { log: false })
  * Configuration
  */
 // all environments
-app.set('port', process.env.PORT || 8081)
+app.set('port', process.env.PORT || 9003)
 app.set('views', __dirname + '/views')
 app.set('view engine', 'jade')
 //app.use(express.logger('dev'));
