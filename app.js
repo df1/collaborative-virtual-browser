@@ -26,6 +26,7 @@ app.use(express.favicon())
 app.use(express.methodOverride())
 app.locals.pretty = true //pretty html output
 app.use(express.static(path.join(__dirname, 'public')))
+app.use(express.static(path.join(__dirname, 'cache')))
 app.use(app.router)
 app.use(express.errorHandler())
 
