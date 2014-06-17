@@ -33,8 +33,8 @@ app.use(express.errorHandler())
  * INIT
  */
 var //messages (requests and validation) + outgoing errors and broadcasts
-    debugEvents = require("./private/socket/debugEvents")(io)
-  , pageEvents = require("./private/socket/pageEvents")
+    //debugEvents = require("./private/socket/debugEvents")(io)
+    pageEvents = require("./private/socket/pageEvents")
   , browserEvents = require('./private/socket/browserEvents')(io) //broadcast browser
 
     //logic (database interaction)
@@ -46,7 +46,7 @@ pageLogic.initBrowser()
 
 io.sockets.on('connection', function(socket) {
     //debug
-    debugEvents.debugSocket(socket)
+    //debugEvents.debugSocket(socket)
     //events that have to do with pages and the browser
     pageEvents(io, socket, pageLogic)
 })
