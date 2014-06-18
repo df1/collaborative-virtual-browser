@@ -210,7 +210,8 @@ var browserLogic = function() {
                 })
             })
 
-            page.set('onResourceRequested', function () {
+            page.set('onResourceRequested', function (requestData, networkRequest) {
+                console.log('Request (#' + requestData.id + '): ' + JSON.stringify(requestData));
                 if (page.p_state.closed) return
                 ++page.p_state.requests
             })
